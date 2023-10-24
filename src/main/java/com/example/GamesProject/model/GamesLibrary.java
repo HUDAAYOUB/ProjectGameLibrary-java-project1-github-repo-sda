@@ -1,11 +1,18 @@
 package com.example.GamesProject.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
+//*********** Table For Games *********
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Getter
+//@Setter
 @Entity
 public class GamesLibrary {
     @Id
@@ -13,7 +20,6 @@ public class GamesLibrary {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
     private String title;
     private String platform;
@@ -21,7 +27,10 @@ public class GamesLibrary {
     private Integer releaseYear;
     private String status;
     private double rating;
-    private String review;
+//    private String Brief;
+    private String Developers;
+    private String Mode;
+    private String Designer;
 
     @Column(name = "date_added")
     private LocalDateTime dateAdded;
@@ -29,7 +38,7 @@ public class GamesLibrary {
     public GamesLibrary() {
     }
 
-    public GamesLibrary(Long id, User user, String title, String platform, String genre, Integer releaseYear, String status, double rating, String review, LocalDateTime dateAdded) {
+    public GamesLibrary(Long id, User user, String title, String platform, String genre, Integer releaseYear, String status, double rating, String developers, String mode, String designer, LocalDateTime dateAdded) {
         this.id = id;
         this.user = user;
         this.title = title;
@@ -38,7 +47,10 @@ public class GamesLibrary {
         this.releaseYear = releaseYear;
         this.status = status;
         this.rating = rating;
-        this.review = review;
+//        Brief = brief;
+        Developers = developers;
+        Mode = mode;
+        Designer = designer;
         this.dateAdded = dateAdded;
     }
 
@@ -98,7 +110,6 @@ public class GamesLibrary {
         this.status = status;
     }
 
-
     public double getRating() {
         return rating;
     }
@@ -106,13 +117,37 @@ public class GamesLibrary {
     public void setRating(double rating) {
         this.rating = rating;
     }
+//
+//    public String getBrief() {
+//        return Brief;
+//    }
+//
+//    public void setBrief(String brief) {
+//        Brief = brief;
+//    }
 
-    public String getReview() {
-        return review;
+    public String getDevelopers() {
+        return Developers;
     }
 
-    public void setReview(String review) {
-        this.review = review;
+    public void setDevelopers(String developers) {
+        Developers = developers;
+    }
+
+    public String getMode() {
+        return Mode;
+    }
+
+    public void setMode(String mode) {
+        Mode = mode;
+    }
+
+    public String getDesigner() {
+        return Designer;
+    }
+
+    public void setDesigner(String designer) {
+        Designer = designer;
     }
 
     public LocalDateTime getDateAdded() {

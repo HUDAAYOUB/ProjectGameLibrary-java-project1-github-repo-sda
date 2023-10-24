@@ -19,20 +19,23 @@ public class UserController {
     private final UserService userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService)
+    {
         this.userService = userService;
     }
 
 
 // for Getting all Users in Postman
     @GetMapping
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers()
+    {
         return userService.getAllUsers();
     }
 
     // Find the user by searching with id
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public User getUserById(@PathVariable Long id)
+    {
         return userService.getUserById(id);
     }
 
@@ -45,13 +48,16 @@ public class UserController {
     // Update user info the logic in Service class
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+    public User updateUser(@PathVariable Long id, @RequestBody User user)
+    {
         return userService.updateUser(id, user);
     }
 
     // Delete user
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public void deleteUser(@PathVariable Long id)
+
+    {
         userService.deleteUser(id);
     }
 

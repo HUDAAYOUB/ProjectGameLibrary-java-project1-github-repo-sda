@@ -1,9 +1,13 @@
 package com.example.GamesProject.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 
 @Entity
 public class User {
@@ -15,18 +19,28 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private Set<GamesLibrary> gameLibrary = new HashSet<>();
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties(value = {"user"}, allowSetters = true)
+    private List<GamesLibrary> gamesLibrary;
 
     public User() {
     }
 
-    public User(Long id, String username, String email, String password, Set<GamesLibrary> gameLibrary) {
+    public User(Long id, String username, String email, String password, List<GamesLibrary> gamesLibrary) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.gameLibrary = gameLibrary;
+        this.gamesLibrary = gamesLibrary;
+    }
+
+    public List<GamesLibrary> getGamesLibrary() {
+        return gamesLibrary;
+    }
+
+    public void setGamesLibrary(List<GamesLibrary> gamesLibrary) {
+        this.gamesLibrary = gamesLibrary;
     }
 
     public Long getId() {
@@ -61,11 +75,15 @@ public class User {
         this.password = password;
     }
 
-    public Set<GamesLibrary> getGameLibrary() {
-        return gameLibrary;
-    }
 
-    public void setGameLibrary(Set<GamesLibrary> gameLibrary) {
-        this.gameLibrary = gameLibrary;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", gamesLibrary=" + gamesLibrary +
+                '}';
     }
 }
