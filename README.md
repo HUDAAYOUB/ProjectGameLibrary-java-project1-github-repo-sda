@@ -9,11 +9,12 @@ This repository contains a game library code project built with Java and Spring 
 - [Overview](#overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Code Structure](#Code_Structure)
+- [Code Structure](#code-structure)  <!-- Corrected anchor link -->
 - [Usage](#usage)
-- [UML](#UML)
+- [UML](#uml)  <!-- Corrected anchor link -->
 - [Configuration](#configuration)
 - [Contact](#contact)
+
 
 ## Overview
 
@@ -89,7 +90,7 @@ POST /users: Create a new user.
 PUT /users/{id}: Update an existing user.
 
 DELETE /users/{id}: Delete a user.
-
+## UML
 
 [![Use Case](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/use%20digram%20games%20library.vpd.png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/use%20digram%20games%20library.vpd.png)
 
