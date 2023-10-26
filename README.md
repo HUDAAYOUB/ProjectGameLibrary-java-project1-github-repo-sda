@@ -91,9 +91,8 @@ PUT /users/{id}: Update an existing user.
 
 DELETE /users/{id}: Delete a user.
 ## UML
-
-[![Use Case](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/use%20digram%20games%20library.vpd.png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/use%20digram%20games%20library.vpd.png)
-[![Image Alt Text](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/GameProject%20Class%20Diagram%20(1).png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/GameProject%20Class%20Diagram%20(1).png)
+[![Image Alt Text](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/11.png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png)
+[![Image Alt Text](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/12.png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png)
 
 ## Configuration
 The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
