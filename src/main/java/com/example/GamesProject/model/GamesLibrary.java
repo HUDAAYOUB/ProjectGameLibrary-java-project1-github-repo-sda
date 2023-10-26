@@ -1,18 +1,10 @@
 package com.example.GamesProject.model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import java.time.LocalDateTime;
 
 //*********** Table For Games *********
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Getter
-//@Setter
 @Entity
 public class GamesLibrary {
     @Id
@@ -25,29 +17,27 @@ public class GamesLibrary {
     private String platform;
     private String genre;
     private Integer releaseYear;
-    private String status;
+    @DecimalMax(value = "5.0", message = "The rating cannot be higher than 5.0")
+    @DecimalMin(value = "0.0", message = "The rating cannot be lower than 0.0")
     private double rating;
-//    private String Brief;
     private String Developers;
     private String Mode;
     private String Designer;
-
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "YYYY-dd-mm")
     @Column(name = "date_added")
     private LocalDateTime dateAdded;
 
     public GamesLibrary() {
     }
 
-    public GamesLibrary(Long id, User user, String title, String platform, String genre, Integer releaseYear, String status, double rating, String developers, String mode, String designer, LocalDateTime dateAdded) {
+    public GamesLibrary(Long id, User user, String title, String platform, String genre, Integer releaseYear,  double rating, String developers, String mode, String designer, LocalDateTime dateAdded) {
         this.id = id;
         this.user = user;
         this.title = title;
         this.platform = platform;
         this.genre = genre;
         this.releaseYear = releaseYear;
-        this.status = status;
         this.rating = rating;
-//        Brief = brief;
         Developers = developers;
         Mode = mode;
         Designer = designer;
@@ -102,14 +92,6 @@ public class GamesLibrary {
         this.releaseYear = releaseYear;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public double getRating() {
         return rating;
     }
@@ -117,15 +99,6 @@ public class GamesLibrary {
     public void setRating(double rating) {
         this.rating = rating;
     }
-//
-//    public String getBrief() {
-//        return Brief;
-//    }
-//
-//    public void setBrief(String brief) {
-//        Brief = brief;
-//    }
-
     public String getDevelopers() {
         return Developers;
     }

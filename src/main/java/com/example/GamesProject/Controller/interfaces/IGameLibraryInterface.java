@@ -4,7 +4,8 @@ import com.example.GamesProject.model.GamesLibrary;
 
 import java.util.List;
 
-public interface IGameLibraryInterface  {  List<GamesLibrary> getAllGames();
+public interface IGameLibraryInterface  {
+    List<GamesLibrary> getAllGames();
 
     GamesLibrary getGameById(Long id);
 

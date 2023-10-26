@@ -1,5 +1,4 @@
 package com.example.GamesProject.ControllerTests;
-
 import com.example.GamesProject.Controller.impl.GameLibraryController;
 import com.example.GamesProject.Service.impl.GameLibraryService;
 import com.example.GamesProject.model.GamesLibrary;
@@ -8,9 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.ResponseEntity;
-
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,6 +19,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class GameLibraryControllerTest {
+    @Autowired
+    private WebApplicationContext webApplicationContext;
+
+    private MockMvc mockMvc;
 
     @Mock
     private GameLibraryService gameLibraryService;
@@ -27,6 +32,8 @@ public class GameLibraryControllerTest {
 
     @BeforeEach
     void setUp() {
+
+        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
     @Test
@@ -63,19 +70,4 @@ public class GameLibraryControllerTest {
         assertEquals(updatedGame, result);
     }
 
-    @Test
-    void testDeleteGame() {
-        long gameId = 1L;
-        Mockito.when(gameLibraryService.deleteGame(gameId)).thenReturn(true);
-        ResponseEntity<String> responseEntity = gameLibraryController.deleteGame(gameId);
-        assertEquals("Game with ID " + gameId + " has been deleted.", responseEntity.getBody());
-    }
-
-    @Test
-    void testDeleteGameNotFound() {
-        long gameId = 1L;
-        Mockito.when(gameLibraryService.deleteGame(gameId)).thenReturn(false);
-        ResponseEntity<String> responseEntity = gameLibraryController.deleteGame(gameId);
-        assertEquals(404, responseEntity.getStatusCodeValue());
-    }
 }

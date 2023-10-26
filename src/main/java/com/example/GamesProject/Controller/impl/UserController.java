@@ -4,6 +4,7 @@ import com.example.GamesProject.Repository.UserRepository;
 import com.example.GamesProject.Service.impl.UserService;
 import com.example.GamesProject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -55,10 +56,13 @@ public class UserController {
 
     // Delete user
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id)
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        try {
+            userService.deleteUser(id);
+            return ResponseEntity.ok("User with ID " + id + " has been deleted.");
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
 
-    {
-        userService.deleteUser(id);
     }
-
 }

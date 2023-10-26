@@ -32,7 +32,7 @@ import java.util.List;
         return gameLibraryService.createGame(newGame);
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public GamesLibrary updateGame(@PathVariable Long id, @RequestBody GamesLibrary gamesLibrary) {
         return gameLibraryService.updateGame(id, gamesLibrary);
     }
