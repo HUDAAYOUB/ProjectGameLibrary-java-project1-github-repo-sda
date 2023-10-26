@@ -96,3 +96,8 @@ DELETE /users/{id}: Delete a user.
 
 ## Configuration
 The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
+
+## Contact
+For any questions or inquiries related to this project, you can contact the project maintainer:
+
+GitHub: [HUDAAYOUB](https://github.com/HUDAAYOUB)
