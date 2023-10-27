@@ -1,5 +1,4 @@
 package com.example.GamesProject.ControllerTests;
-
 import com.example.GamesProject.Controller.impl.UserController;
 import com.example.GamesProject.Service.impl.UserService;
 import com.example.GamesProject.model.User;

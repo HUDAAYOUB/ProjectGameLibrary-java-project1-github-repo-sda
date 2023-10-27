@@ -7,6 +7,8 @@ import java.util.List;
 public interface IGameLibraryInterface  {
     List<GamesLibrary> getAllGames();
 
+    List<GamesLibrary> getGamesByTitle(String title);
+    List<GamesLibrary> getGamesByGenre(String genre);
     GamesLibrary getGameById(Long id);
 
     GamesLibrary createGame(GamesLibrary gamesLibrary);

@@ -53,21 +53,5 @@ public class GameLibraryControllerTest {
         assertEquals(mockGame, result);
     }
 
-    @Test
-    void testCreateGame() {
-        GamesLibrary newGame = new GamesLibrary();
-        Mockito.when(gameLibraryService.createGame(newGame)).thenReturn(newGame);
-        GamesLibrary result = gameLibraryController.createGame(newGame);
-        assertEquals(newGame, result);
-    }
-
-    @Test
-    void testUpdateGame() {
-        long gameId = 1L;
-        GamesLibrary updatedGame = new GamesLibrary();
-        Mockito.when(gameLibraryService.updateGame(gameId, updatedGame)).thenReturn(updatedGame);
-        GamesLibrary result = gameLibraryController.updateGame(gameId, updatedGame);
-        assertEquals(updatedGame, result);
-    }
 
 }

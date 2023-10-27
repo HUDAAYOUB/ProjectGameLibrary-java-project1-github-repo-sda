@@ -46,5 +46,16 @@ import java.util.List;
             return ResponseEntity.notFound().build();
         }
     }
+    // ... (previous methods)
+
+    @GetMapping("/search")
+    public List<GamesLibrary> getGamesByTitle(@RequestParam("title") String title) {
+        return gameLibraryService.getGamesByTitle(title);
+    }
+    @GetMapping("/search1")
+    public List<GamesLibrary> searchGamesByGenre(@RequestParam String genre) {
+        return gameLibraryService.getGamesByGenre(genre);
+    }
+
 }
 

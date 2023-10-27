@@ -49,7 +49,7 @@ UserRepository userRepository;
         Optional<GamesLibrary> optionalGame = gameLibraryRepository.findById(id);
         if (optionalGame.isPresent()) {
             GamesLibrary updateGame = optionalGame.get();
-            updateGame.setStatus(gamesLibrary.getStatus());
+//            updateGame.setStatus(gamesLibrary.getStatus());
             updateGame.setRating(gamesLibrary.getRating());
             updateGame.setUser(gamesLibrary.getUser());
             // Set other fields as needed
@@ -66,5 +66,14 @@ UserRepository userRepository;
         } else {
             return false;
         }}
+    // ... (previous methods)
+
+    @Override
+    public List<GamesLibrary> getGamesByTitle(String title) {
+        return gameLibraryRepository.findByTitleContainingIgnoreCase(title);
+    }
+    public List<GamesLibrary> getGamesByGenre(String genre) {
+        return gameLibraryRepository.findByGenre(genre);
+    }
 
 }

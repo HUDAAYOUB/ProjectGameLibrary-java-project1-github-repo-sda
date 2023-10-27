@@ -12,6 +12,8 @@ public interface GameLibraryRepository extends JpaRepository<GamesLibrary, Long>
 
     List<GamesLibrary> findByTitleAndPlatform(String title, String platform);
 
+
+    List<GamesLibrary> findByTitleContainingIgnoreCase(String title);
     List<GamesLibrary> findByGenre(String genre);
 
 //    List<GamesLibrary> findByStatus(String status);
