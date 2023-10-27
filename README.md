@@ -101,7 +101,7 @@ DELETE /users/{id}: Delete a user.
 
 | Use case                                  | Database                                                 | Class      
 |-------------------------------------------|----------------------------------------------------------|------------
-| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png" > | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/game.png" hight="100%" width="350%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png">
+| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png" > | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/game%20-%20games_library.png" hight="100%" width="350%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png">
 
 
 ## Configuration
