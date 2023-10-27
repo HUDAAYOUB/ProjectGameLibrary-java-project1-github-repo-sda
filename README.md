@@ -99,7 +99,8 @@ DELETE /users/{id}: Delete a user.
 
 | Use case                                  | Database                                                 | Class      
 |-------------------------------------------|----------------------------------------------------------|------------
-| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png" > | <img src = "" width="100%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png">
+| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png" > | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/game.png" hight="100%" width="350%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png">
+
 
 ## Configuration
 The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
