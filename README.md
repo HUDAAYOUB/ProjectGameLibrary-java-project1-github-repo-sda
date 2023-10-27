@@ -14,6 +14,7 @@ This repository contains a game library code project built with Java and Spring 
 - [UML](#uml)  <!-- Corrected anchor link -->
 - [Configuration](#configuration)
 - [Contact](#contact)
+- [Resources](#resources)
 
 
 ## Overview
@@ -73,6 +74,10 @@ To use this project, you can interact with the API endpoints through tools like 
 
 GET /games: Retrieve a list of all games.
 
+GET /games/search?title: search for game by its title.
+
+GET /games/search1?genre: sesrch for game by its genre
+
 GET /games/{id}: Retrieve a specific game by its ID.
 
 POST /games: Create a new game entry.
@@ -91,11 +96,22 @@ PUT /users/{id}: Update an existing user.
 
 DELETE /users/{id}: Delete a user.
 ## UML
-[![Image Alt Text](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/11.png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png)
-[![Image Alt Text](https://github.com/HUDAAYOUB/ProjectGameLibrary/raw/main/12.png)](https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png)
+
+| Use case                                  | Database                                                 | Class      
+|-------------------------------------------|----------------------------------------------------------|------------
+| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png" > | <img src = "" width="100%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png">
 
 ## Configuration
 The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
+
+## Resources
+
+[wikipedia](https://www.wikipedia.org/)
+[Code Java](https://www.codejava.net/spring-boot-tutorials)
+[Java T point](https://www.javatpoint.com/)
+[Canva](https://www.canva.com/)
+[ChatGPT](https://chat.openai.com/)
+
 
 ## Contact
 For any questions or inquiries related to this project, you can contact the project maintainer:
