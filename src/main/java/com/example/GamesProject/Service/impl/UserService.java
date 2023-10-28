@@ -16,6 +16,7 @@ public class UserService implements IUserInterface {
     @Autowired
     UserRepository userRepository;
 
+    //  ********** Get all Users + Find User ByID
     @Override
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -31,11 +32,14 @@ public class UserService implements IUserInterface {
         }
     }
 
+
+    // ********** Create a new user
     @Override
     public User createUser(User user) {
         return userRepository.save(user);
     }
 
+    // ********** Update user info
     @Override
     public User updateUser(Long id, User user) {
         User updateUser = userRepository.findById(id).orElse(null);
@@ -49,6 +53,7 @@ public class UserService implements IUserInterface {
         }
     }
 
+    // ********** Delete User
     @Override
     public void deleteUser(Long id) {
         userRepository.deleteById(id);

@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+//*********** Table For Users *********
 @Entity
 public class User {
     @Id
@@ -19,7 +19,7 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany
+    @OneToMany // ********** Relation
     @JoinColumn(name = "user_id")
     @JsonIgnoreProperties(value = {"user"}, allowSetters = true)
     private List<GamesLibrary> gamesLibrary;

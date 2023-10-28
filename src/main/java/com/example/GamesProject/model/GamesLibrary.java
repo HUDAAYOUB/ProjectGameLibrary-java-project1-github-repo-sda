@@ -12,7 +12,7 @@ public class GamesLibrary {
     private Long id;
 
     @ManyToOne
-    private User user;
+    private User user; // ********** Relation
     private String title;
     private String platform;
     private String genre;

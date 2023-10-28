@@ -25,13 +25,11 @@ UserRepository userRepository;
         this.gameLibraryRepository = gameLibraryRepository;
     }
 
-
+    // ********** Get ALLGames + ByID + ByTitle + ByGenre
     public List<GamesLibrary> getAllGames()
     {
         return gameLibraryRepository.findAll();
     }
-
-
     public GamesLibrary getGameById(Long id) {
         Optional<GamesLibrary> game = gameLibraryRepository.findById(id);
         if (game.isPresent()) {
@@ -39,35 +37,6 @@ UserRepository userRepository;
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Game with ID " + id + " not found");
         }}
-
-
-    public GamesLibrary createGame(GamesLibrary newGame) {
-        return gameLibraryRepository.save(newGame);
-    }
-
-    public GamesLibrary updateGame(Long id, GamesLibrary gamesLibrary) {
-        Optional<GamesLibrary> optionalGame = gameLibraryRepository.findById(id);
-        if (optionalGame.isPresent()) {
-            GamesLibrary updateGame = optionalGame.get();
-//            updateGame.setStatus(gamesLibrary.getStatus());
-            updateGame.setRating(gamesLibrary.getRating());
-            updateGame.setUser(gamesLibrary.getUser());
-            // Set other fields as needed
-            // updateGame.setReview(gamesLibrary.getReview());
-            return gameLibraryRepository.save(updateGame);
-        }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Game with ID " + id + " not found");
-    }
-
-    public boolean deleteGame(Long id) {
-        if (gameLibraryRepository.existsById(id)) {
-            gameLibraryRepository.deleteById(id);
-            return true;
-        } else {
-            return false;
-        }}
-    // ... (previous methods)
-
     @Override
     public List<GamesLibrary> getGamesByTitle(String title) {
         return gameLibraryRepository.findByTitleContainingIgnoreCase(title);
@@ -75,5 +44,31 @@ UserRepository userRepository;
     public List<GamesLibrary> getGamesByGenre(String genre) {
         return gameLibraryRepository.findByGenre(genre);
     }
+
+    // ********** Post NewGames
+    public GamesLibrary createGame(GamesLibrary newGame) {
+        return gameLibraryRepository.save(newGame);
+    }
+
+    // ********** Update Game
+    public GamesLibrary updateGame(Long id, GamesLibrary gamesLibrary) {
+        Optional<GamesLibrary> optionalGame = gameLibraryRepository.findById(id);
+        if (optionalGame.isPresent()) {
+            GamesLibrary updateGame = optionalGame.get();
+            updateGame.setRating(gamesLibrary.getRating());
+            updateGame.setUser(gamesLibrary.getUser());
+            return gameLibraryRepository.save(updateGame);
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Game with ID " + id + " not found");
+    }
+
+    // ********** Delete Game
+    public boolean deleteGame(Long id) {
+        if (gameLibraryRepository.existsById(id)) {
+            gameLibraryRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }}
 
 }

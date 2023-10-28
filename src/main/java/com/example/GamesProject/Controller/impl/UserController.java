@@ -26,35 +26,33 @@ public class UserController {
     }
 
 
-// for Getting all Users in Postman
+//  ********** Get all Users + Find User ByID
     @GetMapping
     public List<User> getAllUsers()
     {
         return userService.getAllUsers();
     }
 
-    // Find the user by searching with id
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Long id)
     {
         return userService.getUserById(id);
     }
 
-    // Create a new user from postman
+    // ********** Create a new user
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
-    // Update user info the logic in Service class
-
+    // ********** Update user info
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user)
     {
         return userService.updateUser(id, user);
     }
 
-    // Delete user
+    // ********** Delete user
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         try {
