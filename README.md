@@ -1,30 +1,30 @@
-# VAI Game Library Code Project
-[Presentation](https://docs.google.com/presentation/d/1LekLU3SWc_CN7sluX3D4bfUisOznS-zC/edit?usp=sharing&ouid=111785982233297159018&rtpof=true&sd=true)
+# Game Library Code Project
 
+## Presentation
 
-![Java](https://img.shields.io/badge/Java-11-green)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5-blue)
+**Java Spring Boot**
 
 This repository contains a game library code project built with Java and Spring Boot. The project is designed to manage and organize information about video games, including details such as title, platform, genre, release year, and user reviews. It also allows users to interact with the library by adding, updating, and deleting games.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Code Structure](#code-structure)  <!-- Corrected anchor link -->
+- [Code Structure](#code-structure)
 - [Usage](#usage)
-- [UML](#uml)  <!-- Corrected anchor link -->
+- [UML](#uml)
 - [Configuration](#configuration)
 - [Contact](#contact)
 - [Resources](#resources)
 
-
 ## Overview
 
-This game library code project is built using Java and Spring Boot, and it provides a RESTful API for managing video game information. It allows users to create, read, update, and delete game entries, as well as search for games by various criteria like title and genre. The project also includes user management, where users can create accounts and associate games with their profiles.
+This game library code project is built using Java and Spring Boot, providing a RESTful API for managing video game information. It allows users to create, read, update, and delete game entries, as well as search for games by various criteria like title and genre. The project also includes user management, where users can create accounts and associate games with their profiles.
 
 ## Features
-- **Game Management:** The project allows users to add, update, and delete game entries. Game details include title, platform, genre, release year, status, rating, developers, play mode, and designer.
+
+- **Game Management:** Users can add, update, and delete game entries. Game details include title, platform, genre, release year, status, rating, developers, play mode, and designer.
 
 - **User Management:** Users can create accounts, and each user can have their own library of games.
 
@@ -32,91 +32,150 @@ This game library code project is built using Java and Spring Boot, and it provi
 
 ## Getting Started
 
-To get started with this project, you will need to have Java and Spring Boot set up on your local development environment. You can follow these steps:
+To get started with this project, you will need to have Java and Spring Boot set up on your local development environment. Follow these steps:
 
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/your-game-library.git](https://github.com/HUDAAYOUB/ProjectGameLibrary.git)https://github.com/HUDAAYOUB/ProjectGameLibrary.git
-   cd your-game-library
+   git clone https://github.com/HUDAAYOUB/ProjectGameLibrary.git
+   cd ProjectGameLibrary
+# Code Structure
 
-## Code Structure
-**Controllers:**
+## Controllers:
 
-GameLibraryController.java: Manages endpoints related to game operations.
-UserController.java: Handles user-related endpoints.
-**Model:**
+### 1. GameLibraryController.java
 
-GamesLibrary.java: Represents the game entity with attributes like title, platform, genre, and more.
-User.java: Represents user information including username, email, and password.
+**Package:** `com.example.ProjectGameLibrary.controller`
 
-**Repository:**
+**Description:** Manages endpoints related to game operations.
 
-GameLibraryRepository.java: Provides data access methods for the GamesLibrary entity.
-UserRepository.java: Offers data access methods for the User entity.
-**Service:**
+### 2. UserController.java
 
-GameLibraryService.java: Contains business logic for game-related operations.
-UserService.java: Implements business logic for user-related operations.
-**Resources:**
+**Package:** `com.example.ProjectGameLibrary.controller`
 
-application.properties: Configuration file for setting up the database and other properties.
-**Tests:**
+**Description:** Handles user-related endpoints.
 
-Unit test classes for controllers, repositories, and services.
-Other Project Files:
+## Models:
 
+### 1. User
 
-**pom.xml:** Maven configuration file for project dependencies and build settings.
-Other project-specific files and directories as needed.
+**Package:** `com.example.ProjectGameLibrary.model`
 
-## Usage
+**Description:** Represents a user in the database.
 
-To use this project, you can interact with the API endpoints through tools like Postman or by creating your own front-end application. Here are some sample API endpoints:
+**Fields:**
+- `id`: Unique identifier for the user (auto-generated).
+- `username`: Username used for login.
+- `email`: User's email address.
+- `password`: Password used for login.
+- `name`: Name of the user.
+- `userGames`: List of user games associated with the user.
+- `roles`: Collection of roles assigned to the user.
 
-GET /games: Retrieve a list of all games.
+**Constructors:**
+- Default constructor.
+- Parameterized constructor.
 
-GET /games/search?title: search for game by its title.
+**Methods:**
+- `removeUserGame(Long gameId)`: Removes a game from the user's library.
+- `addUserGame(Long gameId)`: Adds a game to the user's library.
 
-GET /games/search1?genre: sesrch for game by its genre
+### 2. Role
 
-GET /games/{id}: Retrieve a specific game by its ID.
+**Package:** `com.example.ProjectGameLibrary.model`
 
-POST /games: Create a new game entry.
+**Description:** Represents a user role.
 
-PATCH /games/{id}: Update an existing game entry.
+**Fields:**
+- `id`: Unique identifier for the role (auto-generated).
+- `name`: Name of the role.
 
-DELETE /games/{id}: Delete a game entry.
+**Constructors:**
+- Default constructor.
+- Parameterized constructor.
 
-GET /users: Retrieve a list of all users.
+### 3. GameStatus
 
-GET /users/{id}: Retrieve a specific user by their ID.
+**Package:** `com.example.ProjectGameLibrary.model`
 
-POST /users: Create a new user.
+**Description:** Enumeration representing the status of the game interaction (`NOT_STARTED`, `PLAYING`, `PLAYED`).
 
-PUT /users/{id}: Update an existing user.
+### 4. UserGame
 
-DELETE /users/{id}: Delete a user.
-## UML
+**Package:** `com.example.ProjectGameLibrary.model`
 
-| Use case                                  | Database                                                 | Class      
-|-------------------------------------------|----------------------------------------------------------|------------
-| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/11.png" > | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/game%20-%20games_library.png" hight="100%" width="350%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary/blob/main/12.png">
+**Fields:**
+- `id`: Unique identifier for the user game (auto-generated).
+- `user`: Reference to the associated user.
+- `game`: Reference to the associated game from the game library.
+- `userRating`: User's rating for the game.
+- `userOpinion`: User's opinion about the game.
+- `status`: Enumeration representing the status of the game interaction (`NOT_STARTED`, `PLAYING`, `PLAYED`).
 
+**Constructors:**
+- Default constructor.
+- Parameterized constructor.
 
-## Configuration
-The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
+**Methods:**
+- Getters and setters for all fields.
 
-## Resources
+### 5. GamesLibrary
 
-[wikipedia](https://www.wikipedia.org/)
-[Code Java](https://www.codejava.net/spring-boot-tutorials)
-[Java T point](https://www.javatpoint.com/)
-[Canva](https://www.canva.com/)
-[ChatGPT](https://chat.openai.com/)
+**Package:** `com.example.ProjectGameLibrary.model`
 
+**Fields:**
+- `id`: Unique identifier for the game (auto-generated).
+- `title`: Title of the game.
+- `platform`: Platform on which the game is available.
+- `genre`: Genre of the game.
+- `releaseYear`: Release year of the game.
+- `status`: Enumeration representing the status of the game (`NOT_STARTED`, `PLAYING`, `PLAYED`).
+- `rating`: Rating of the game.
 
-## Contact
-For any questions or inquiries related to this project, you can contact the project maintainer:
+**Constructors:**
+- Default constructor.
+- Parameterized constructor.
 
-GitHub: [HUDAAYOUB](https://github.com/HUDAAYOUB)
+**Methods:**
+- Getters and setters for all fields.
+
+## Repository:
+
+### 1. GameLibraryRepository.java
+
+**Package:** `com.example.ProjectGameLibrary.repository`
+
+**Description:** Provides data access methods for the GamesLibrary entity.
+
+### 2. UserRepository.java
+
+**Package:** `com.example.ProjectGameLibrary.repository`
+
+**Description:** Offers data access methods for the User entity.
+
+## Service:
+
+### 1. GameLibraryService.java
+
+**Package:** `com.example.ProjectGameLibrary.service`
+
+**Description:** Contains business logic for game-related operations.
+
+### 2. UserService.java
+
+**Package:** `com.example.ProjectGameLibrary.service`
+
+**Description:** Implements business logic for user-related operations.
+
+## Resources:
+
+- **application.properties:** Configuration file for setting up the database and other properties.
+
+## Tests:
+
+- **Unit test classes:** For controllers, repositories, and services.
+
+## Other Project Files:
+
+- **pom.xml:** Maven configuration file for project dependencies and build settings.
+- **Other project-specific files and directories as needed.**
