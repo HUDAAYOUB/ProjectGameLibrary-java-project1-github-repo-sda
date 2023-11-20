@@ -1,4 +1,5 @@
-# Game Library Code Project
+
+# Game Library Code Project 🎮
 
 ## Presentation
 
@@ -39,25 +40,27 @@ To get started with this project, you will need to have Java and Spring Boot set
    ```bash
    git clone https://github.com/HUDAAYOUB/ProjectGameLibrary.git
    cd ProjectGameLibrary
-# Code Structure
+   ```
 
-## Controllers:
+## Code Structure
 
-### 1. GameLibraryController.java
+### Controllers:
+
+#### 1. GameLibraryController.java
 
 **Package:** `com.example.ProjectGameLibrary.controller`
 
 **Description:** Manages endpoints related to game operations.
 
-### 2. UserController.java
+#### 2. UserController.java
 
 **Package:** `com.example.ProjectGameLibrary.controller`
 
 **Description:** Handles user-related endpoints.
 
-## Models:
+### Models:
 
-### 1. User
+#### 1. User
 
 **Package:** `com.example.ProjectGameLibrary.model`
 
@@ -80,7 +83,7 @@ To get started with this project, you will need to have Java and Spring Boot set
 - `removeUserGame(Long gameId)`: Removes a game from the user's library.
 - `addUserGame(Long gameId)`: Adds a game to the user's library.
 
-### 2. Role
+#### 2. Role
 
 **Package:** `com.example.ProjectGameLibrary.model`
 
@@ -94,13 +97,13 @@ To get started with this project, you will need to have Java and Spring Boot set
 - Default constructor.
 - Parameterized constructor.
 
-### 3. GameStatus
+#### 3. GameStatus
 
 **Package:** `com.example.ProjectGameLibrary.model`
 
 **Description:** Enumeration representing the status of the game interaction (`NOT_STARTED`, `PLAYING`, `PLAYED`).
 
-### 4. UserGame
+#### 4. UserGame
 
 **Package:** `com.example.ProjectGameLibrary.model`
 
@@ -119,7 +122,7 @@ To get started with this project, you will need to have Java and Spring Boot set
 **Methods:**
 - Getters and setters for all fields.
 
-### 5. GamesLibrary
+#### 5. GamesLibrary
 
 **Package:** `com.example.ProjectGameLibrary.model`
 
@@ -139,43 +142,92 @@ To get started with this project, you will need to have Java and Spring Boot set
 **Methods:**
 - Getters and setters for all fields.
 
-## Repository:
+### Repository:
 
-### 1. GameLibraryRepository.java
+#### 1. GameLibraryRepository.java
 
 **Package:** `com.example.ProjectGameLibrary.repository`
 
 **Description:** Provides data access methods for the GamesLibrary entity.
 
-### 2. UserRepository.java
+#### 2. UserRepository.java
 
 **Package:** `com.example.ProjectGameLibrary.repository`
 
 **Description:** Offers data access methods for the User entity.
 
-## Service:
+### Service:
 
-### 1. GameLibraryService.java
+#### 1. GameLibraryService.java
 
 **Package:** `com.example.ProjectGameLibrary.service`
 
 **Description:** Contains business logic for game-related operations.
 
-### 2. UserService.java
+#### 2. UserService.java
 
 **Package:** `com.example.ProjectGameLibrary.service`
 
 **Description:** Implements business logic for user-related operations.
 
-## Resources:
+### Resources:
 
 - **application.properties:** Configuration file for setting up the database and other properties.
 
-## Tests:
+### Tests:
 
 - **Unit test classes:** For controllers, repositories, and services.
 
-## Other Project Files:
+### Other Project Files:
 
 - **pom.xml:** Maven configuration file for project dependencies and build settings.
 - **Other project-specific files and directories as needed.**
+
+## Usage
+
+To use this project, you can interact with the API endpoints through tools like Postman or by creating your own front-end application. Here are some sample API endpoints:
+
+- **GET /games:** Retrieve a list of all games.
+
+- **GET /games/search?title:** Search for a game by its title.
+
+- **GET /games/search1?genre:** Search for a game by its genre.
+
+- **GET /games/{id}:** Retrieve a specific game by its ID.
+
+- **POST /games:** Create a new game entry.
+
+- **PATCH /games/{id}:** Update an existing game entry.
+
+- **DELETE /games/{id}:** Delete a game entry.
+
+- **GET /users:** Retrieve a list of all users.
+
+- **GET /users/{id}:** Retrieve a specific user by their ID.
+
+- **POST /users:** Create a new user.
+
+- **PUT /users/{id}:** Update an existing user.
+
+- **DELETE /users/{id}:** Delete a user.
+
+## UML
+
+Use case | Database | Class
+--- | --- | ---
+**Configuration**
+
+The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
+
+## Contact
+
+For inquiries and support, please contact [Your Name] at [your.email@example.com].
+
+## Resources
+
+- [Wikipedia](https://en.wikipedia.org/)
+- [Code Java](https://www.codejava.net/)
+- [Java T Point](https://www.javatpoint.com/)
+- [Canva](https://www.canva.com/)
+- [ChatGPT](https://www.openai.com/)
+```
