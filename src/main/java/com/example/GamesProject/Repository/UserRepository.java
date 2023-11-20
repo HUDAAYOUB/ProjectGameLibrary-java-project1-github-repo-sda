@@ -6,8 +6,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    // User Query
-    User findByUsername(String username);
+
+
     User findByEmail(String email);
     void deleteAllByEmail(String email);
+    /**
+     * Method to find a User entity by its username field
+     *
+     * @param username The username of the User entity to search for
+     * @return The found User entity or null if not found
+     */
+    User findByUsername(String username);
 }

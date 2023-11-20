@@ -1,15 +1,21 @@
 package com.example.GamesProject.Controller.interfaces;
 
 import com.example.GamesProject.model.User;
-
 import java.util.List;
 
 public interface IUserInterface {
+    /**
+     * Retrieves a list of all users
+     *
+     * @return list of all users
+     */
+    List<User> getUsers();
 
-    List<User> getAllUsers();
-    User getUserById(Long id);
-    User createUser(User user);
-    User updateUser(Long id, User user);
-    void deleteUser(Long id);
-
+    /**
+     * Saves a new user
+     *
+     * @param user the user to be saved
+     * @return the saved user
+     */
+    User saveUser(User user);
 }

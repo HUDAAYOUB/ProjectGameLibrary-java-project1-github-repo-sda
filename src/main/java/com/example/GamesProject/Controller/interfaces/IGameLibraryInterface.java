@@ -1,15 +1,17 @@
 package com.example.GamesProject.Controller.interfaces;
 
 import com.example.GamesProject.model.GamesLibrary;
-
+import com.example.GamesProject.model.GameStatus;
 import java.util.List;
 
-public interface IGameLibraryInterface  {
+public interface IGameLibraryInterface {
+
     List<GamesLibrary> getAllGames();
 
     List<GamesLibrary> getGamesByTitle(String title);
 
     List<GamesLibrary> getGamesByGenre(String genre);
+
     GamesLibrary getGameById(Long id);
 
     GamesLibrary createGame(GamesLibrary gamesLibrary);
@@ -17,4 +19,6 @@ public interface IGameLibraryInterface  {
     GamesLibrary updateGame(Long id, GamesLibrary gamesLibrary);
 
     void deleteGame(Long id);
+
+    void setStatusOfGame(Long gameId, GameStatus status);
 }

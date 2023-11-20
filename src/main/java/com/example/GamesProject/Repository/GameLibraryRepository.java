@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface GameLibraryRepository extends JpaRepository<GamesLibrary, Long> {
-//    List<GamesLibrary> findByUserId(Long userId);
 
     List<GamesLibrary> findByTitleAndPlatform(String title, String platform);
     List<GamesLibrary> findByTitleContainingIgnoreCase(String title);

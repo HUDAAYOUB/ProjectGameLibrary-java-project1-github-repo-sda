@@ -4,11 +4,12 @@ import com.example.GamesProject.model.GamesLibrary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.example.GamesProject.model.GameStatus;
 
 import java.util.List;
 
 @RestController
-    @RequestMapping("/games")
+    @RequestMapping("api/games")
     public class GameLibraryController {
     private final GameLibraryService gameLibraryService;
 
@@ -48,16 +49,21 @@ import java.util.List;
     public GamesLibrary updateGame(@PathVariable Long id, @RequestBody GamesLibrary gamesLibrary) {
         return gameLibraryService.updateGame(id, gamesLibrary);
     }
-
+//   @PutMapping("/{id}/status")
+//   public void setStatusOfGame(@PathVariable Long id, @RequestParam GameStatus status) {
+//       gameLibraryService.setStatusOfGame(id, status);
+//    }
     // ********** Delete Game
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteGame(@PathVariable Long id) {
         boolean deleted = gameLibraryService.deleteGame(id);
         if (deleted) {
-            return ResponseEntity.ok("Game with ID " + id + " has been deleted.");
+            return ResponseEntity.ok("{ success: true, gameId: " + id + "}");
         } else {
             return ResponseEntity.notFound().build();
         }
+
+
     }
 
 

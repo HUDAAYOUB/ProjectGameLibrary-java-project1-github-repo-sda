@@ -1,46 +1,85 @@
 package com.example.GamesProject.model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
-//*********** Table For Users *********
+import static jakarta.persistence.FetchType.EAGER;
+
+/**
+ * Entity class for representing a User in the database
+ */
 @Entity
 public class User {
+    /**
+     * The unique identifier for the user
+     */
     @Id
+    /**
+     * The id field is generated automatically by the database
+     */
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    /**
+     * The username used to log in
+     */
     private String username;
     private String email;
+
+    /**
+     * The password used to log in
+     */
     private String password;
+    /**
+     * The name of the user
+     */
+private String name;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("user")
+    private List<UserGame> userGame;
+    /**
+     * The roles that the user has
+     */
+    @ManyToMany(fetch = EAGER)
+    private Collection<Role> roles = new ArrayList<>();
 
-    @OneToMany // ********** Relation
-    @JoinColumn(name = "user_id")
-    @JsonIgnoreProperties(value = {"user"}, allowSetters = true)
-    private List<GamesLibrary> gamesLibrary;
+    // Constructors, getters, setters, and other methods
 
-    public User() {
+    public User() {}
+    public void removeUserGame(Long gameId) {
+        if (userGame != null) {
+            userGame.removeIf(userGame -> userGame.getGame().getId().equals(gameId));
+        }
     }
 
-    public User(Long id, String username, String email, String password, List<GamesLibrary> gamesLibrary) {
+    public User(Long id, String username, String email, String password, String name, List<UserGame> userGame, Collection<Role> roles) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.gamesLibrary = gamesLibrary;
+        this.name = name;
+        this.userGame = userGame;
+        this.roles = roles;
     }
 
-    public List<GamesLibrary> getGamesLibrary() {
-        return gamesLibrary;
+    public Collection<Role> getRoles() {
+        return roles;
     }
 
-    public void setGamesLibrary(List<GamesLibrary> gamesLibrary) {
-        this.gamesLibrary = gamesLibrary;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
+// Getters, setters, constructors, toString, etc.
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getId() {
@@ -75,15 +114,17 @@ public class User {
         this.password = password;
     }
 
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", gamesLibrary=" + gamesLibrary +
-                '}';
+    public List<UserGame> getUserGame() {
+        return userGame;
     }
+
+    public void setUserGame(List<UserGame> userGame) {
+        this.userGame = userGame;
+    }
+
+    public void addUserGame(Long gameId) {
+
+    }
+
+
 }
