@@ -54,7 +54,7 @@ public class GameLibraryService {
             GamesLibrary existingGame = optionalGame.get();
             existingGame.setTitle(updatedGame.getTitle());
             existingGame.setRating(updatedGame.getRating());
-//            existingGame.setUser(updatedGame.getUser());
+
             // Set other attributes as needed
             return gameLibraryRepository.save(existingGame);
         }

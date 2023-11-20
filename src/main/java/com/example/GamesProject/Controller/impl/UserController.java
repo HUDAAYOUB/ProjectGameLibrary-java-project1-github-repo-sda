@@ -63,30 +63,8 @@ public class UserController {
 
 
     // Update user info the logic in Service class
-//    @PutMapping("/{userGameId}")
-//    public ResponseEntity<UserGame> updateUserGame(
-//            @PathVariable Long userGameId,
-//            @RequestBody UserGame updatedUserGame) {
-//
-//        UserGame existingUserGame = userGameService.findById(userGameId);
-//
-//        if (existingUserGame != null) {
-//            // Update the fields you want to allow to be updated
-//            existingUserGame.setUserRating(updatedUserGame.getUserRating());
-//            existingUserGame.setUserOpinion(updatedUserGame.getUserOpinion());
-//            existingUserGame.setStatus(updatedUserGame.getStatus());
-//
-//            UserGame savedUserGame = userGameService.save(existingUserGame);
-//            return new ResponseEntity<>(savedUserGame, HttpStatus.OK);
-//        } else {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//    }
 
-//    @PutMapping("/{id}")
-//    public User updateUser(@PathVariable Long id, @RequestBody User user) {
-//        return userService.updateUser(id, user);
-//    }
+
 
     // Delete user
     @DeleteMapping("/{id}")

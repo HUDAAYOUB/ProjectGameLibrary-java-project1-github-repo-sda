@@ -41,15 +41,9 @@ public class GamesProjectApplication {
 //			userService.saveRole(new Role(null, "ROLE_ADMIN"));
 
 //			userService.saveUser(new User(null, "huda", "mail@mail.es", "1234", "John Doe", new ArrayList<>(), new ArrayList<>()));
-			//userService.saveUser(new User(null, "James Smith", "james", "1234", new ArrayList<>()));
-			//userService.saveUser(new User(null, "Jane Carry", "jane", "1234", new ArrayList<>()));
-			//userService.saveUser(new User(null, "Chris Anderson", "chris", "1234", new ArrayList<>()));
 
 //			userService.addRoleToUser("huda", "ROLE_ADMIN");
-			//userService.addRoleToUser("james", "ROLE_ADMIN");
-			//userService.addRoleToUser("jane", "ROLE_USER");
-			//userService.addRoleToUser("chris", "ROLE_ADMIN");
-			//userService.addRoleToUser("chris", "ROLE_USER");
+
 		};
 	}
 }

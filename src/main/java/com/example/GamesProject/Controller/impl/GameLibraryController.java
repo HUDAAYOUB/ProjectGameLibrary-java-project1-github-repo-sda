@@ -49,10 +49,7 @@ import java.util.List;
     public GamesLibrary updateGame(@PathVariable Long id, @RequestBody GamesLibrary gamesLibrary) {
         return gameLibraryService.updateGame(id, gamesLibrary);
     }
-//   @PutMapping("/{id}/status")
-//   public void setStatusOfGame(@PathVariable Long id, @RequestParam GameStatus status) {
-//       gameLibraryService.setStatusOfGame(id, status);
-//    }
+
     // ********** Delete Game
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteGame(@PathVariable Long id) {

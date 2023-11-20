@@ -25,11 +25,7 @@ public class UserGameController {
     public UserGameController(UserGameService userGameService) {
         this.userGameService = userGameService;
     }
-//@GetMapping("/{userId}/games/{gameId}")
-//public ResponseEntity<String> findByUserIdAndGameId(@PathVariable Long userId, @PathVariable Long gameId)
-//{
-//        return this.userGameService = userGameService;}
-//}
+
 
     @DeleteMapping("/{userId}/games/{gameId}")
     public void deleteGameFromUser(@PathVariable Long userId, @PathVariable Long gameId) {
