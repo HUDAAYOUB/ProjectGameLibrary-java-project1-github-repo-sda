@@ -48,13 +48,13 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 1. GameLibraryController.java
 
-**Package:** `com.example.ProjectGameLibrary.controller`
+
 
 **Description:** Manages endpoints related to game operations.
 
 #### 2. UserController.java
 
-**Package:** `com.example.ProjectGameLibrary.controller`
+
 
 **Description:** Handles user-related endpoints.
 
@@ -62,7 +62,6 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 1. User
 
-**Package:** `com.example.ProjectGameLibrary.model`
 
 **Description:** Represents a user in the database.
 
@@ -85,7 +84,7 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 2. Role
 
-**Package:** `com.example.ProjectGameLibrary.model`
+
 
 **Description:** Represents a user role.
 
@@ -105,7 +104,7 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 4. UserGame
 
-**Package:** `com.example.ProjectGameLibrary.model`
+
 
 **Fields:**
 - `id`: Unique identifier for the user game (auto-generated).
@@ -124,7 +123,7 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 5. GamesLibrary
 
-**Package:** `com.example.ProjectGameLibrary.model`
+
 
 **Fields:**
 - `id`: Unique identifier for the game (auto-generated).
@@ -146,13 +145,10 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 1. GameLibraryRepository.java
 
-**Package:** `com.example.ProjectGameLibrary.repository`
 
 **Description:** Provides data access methods for the GamesLibrary entity.
 
 #### 2. UserRepository.java
-
-**Package:** `com.example.ProjectGameLibrary.repository`
 
 **Description:** Offers data access methods for the User entity.
 
