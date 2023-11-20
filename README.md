@@ -98,7 +98,7 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 3. GameStatus
 
-**Package:** `com.example.ProjectGameLibrary.model`
+
 
 **Description:** Enumeration representing the status of the game interaction (`NOT_STARTED`, `PLAYING`, `PLAYED`).
 
@@ -156,13 +156,12 @@ To get started with this project, you will need to have Java and Spring Boot set
 
 #### 1. GameLibraryService.java
 
-**Package:** `com.example.ProjectGameLibrary.service`
+
 
 **Description:** Contains business logic for game-related operations.
 
 #### 2. UserService.java
 
-**Package:** `com.example.ProjectGameLibrary.service`
 
 **Description:** Implements business logic for user-related operations.
 
@@ -211,13 +210,16 @@ To use this project, you can interact with the API endpoints through tools like 
 
 Use case | Database | Class
 --- | --- | ---
+
+
+
 **Configuration**
 
 The project uses a PostgreSQL database, and you may need to configure the database connection details in the application.properties file. Additionally, the project includes validation constraints and error messages for input data, which you can customize if needed.
 
 ## Contact
 
-For inquiries and support, please contact [Your Name] at [your.email@example.com].
+For inquiries and support, please contact [Huda Ayoub] at [huda3ya@gmail.com].
 
 ## Resources
 
