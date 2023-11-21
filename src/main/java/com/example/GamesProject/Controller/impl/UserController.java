@@ -54,15 +54,14 @@ public class UserController {
         return userService.createUser(user);
     }
 
+    // Update his three properties about the game
+
     @PostMapping("/{userId}/addgame/{gameId}")
     public User addGameToUser(@PathVariable Long userId, @PathVariable Long gameId,
                               @RequestParam int userRating, @RequestParam String userOpinion,
                               @RequestParam GameStatus status) {
         return userService.addGameToUser(userId, gameId, userRating, userOpinion, status);
     }
-
-
-    // Update user info the logic in Service class
 
 
 

@@ -19,7 +19,7 @@ import java.util.List;
     }
 
 
-    // ********** Get ALLGames + ByID + ByTitle + ByGenre
+    // ********** Get ALLGames with details
     @GetMapping
     public List<GamesLibrary> getAllGames() {
         return gameLibraryService.getAllGames();

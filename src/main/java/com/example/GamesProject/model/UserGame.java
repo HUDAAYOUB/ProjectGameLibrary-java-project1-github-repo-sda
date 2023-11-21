@@ -2,6 +2,7 @@ package com.example.GamesProject.model;
 
 import jakarta.persistence.*;
 
+// UserGame table
 @Entity
 public class UserGame {
     @Id

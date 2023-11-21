@@ -25,7 +25,7 @@ public class UserGameController {
     public UserGameController(UserGameService userGameService) {
         this.userGameService = userGameService;
     }
-
+// delete a game from the user library
 
     @DeleteMapping("/{userId}/games/{gameId}")
     public void deleteGameFromUser(@PathVariable Long userId, @PathVariable Long gameId) {
@@ -34,7 +34,7 @@ public class UserGameController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found for user with ID " + userId);
         }
     }
-
+// add game to user profile
     @PostMapping("/{userId}/games/{gameId}")
     public User createGame(@PathVariable Long userId, @PathVariable Long gameId,
                            @RequestParam int userRating, @RequestParam String userOpinion,

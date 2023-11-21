@@ -24,7 +24,7 @@ public class UserGameService {
                 this.userGameRepository = userGameRepository;
                 this.userRepository = userRepository;
         }
-
+// Delete game from user profile
         public boolean deleteGameFromUser(Long userId, Long gameId) {
                 Optional<User> optionalUser = userRepository.findById(userId);
 
@@ -39,6 +39,8 @@ public class UserGameService {
                         return false;
                 }
         }
+
+        // Add game to user
         public UserGame createUserGame(Long userId, Long gameId, int userRating, String userOpinion, GameStatus status) {
                 UserGame userGame = new UserGame();
 
@@ -49,6 +51,7 @@ public class UserGameService {
                 return userGameRepository.save(userGame);
         }
 
+        // Update the game card in userprofile
         public boolean updateUserGame(Long userId, Long gameId, int userRating, String userOpinion, GameStatus status) {
                 UserGame userGame = userGameRepository.findByUserIdAndGameId(userId, gameId);
                 if (userGame != null) {
