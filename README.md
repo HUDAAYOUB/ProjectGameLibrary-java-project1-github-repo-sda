@@ -208,10 +208,11 @@ To use this project, you can interact with the API endpoints through tools like 
 
 ## UML
 
-Use case | Database | Class
---- | --- | ---
 
 
+| Use case                                    | Database                                                 | Class      
+|---------------------------------------------|----------------------------------------------------------|------------
+| <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary-java-project1-github-repo-sda/blob/main/11.png" > | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary-java-project1-github-repo-sda/blob/main/gamenew.png" width="50%"> | <img src = "https://github.com/HUDAAYOUB/ProjectGameLibrary-java-project1-github-repo-sda/blob/main/12.png" width="50%">
 
 **Configuration**
 
